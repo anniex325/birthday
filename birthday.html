@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Happy Birthday to My Beloved Mom</title>
+	<meta http-equiv="content-type" content="text/html charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit
+			src: url('digital-7_mono.ttf') format("truetype")
+		}
+	</style>
+	<link href="css/default_dev.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden_dev.js"></script>
+    <script type="text/javascript" src="js/functions_dev.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				Dear Dad, <br />
+				 <br />
+				    时间过得好快,<br />
+				老爹已经53了, 而我，已经上完大学第一年了。<br />
+				现在想想小时候和你在济南和青岛的事已经是N多年以前了。<br />
+				以后希望老爹的医院能会越来越好，我也会努力学习的。 <br />
+				老爹不要老是不吃饭累着自己，钱虽然很重要，但是身体毕竟是最重要的。<br />
+				女儿长大会挣很多钱让老爹花的 XD<br />
+				 <br />
+				-Annie Xu <br />
+				 <br />
+				After this long letter, I want to say....<br />
+				<span class="comments"> HAPPY BIRTHDAY DAD !!!!! </span><br />
+
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Hey dad,
+              You will always be the father I admire and look upon
+						<!-- <div id="elapseClock"></div> -->
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature"> - Annie Xu </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  <script type="text/javascript">
+		var numSecondsBeforeHeartAnimation = 35;
+		var offsetX = $("#loveHeart").width() / 2
+		var offsetY = $("#loveHeart").height() / 2 - 55
+		var together = new Date()
+		together.setFullYear(2010, 8, 15)
+		together.setHours(14)
+		together.setMinutes(0)
+		together.setSeconds(0)
+		together.setMilliseconds(0)
+
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div")
+			msg.id = "errorMsg"
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"
+			document.body.appendChild(msg)
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute")
+			$("#copyright").css("bottom", "10px")
+		    document.execCommand("stop")
+		} else {
+			setTimeout(function () {
+				startHeartAnimation()
+			}, numSecondsBeforeHeartAnimation * 100)
+
+			timeElapse(together)
+			setInterval(function () {
+				timeElapse(together)
+			}, 1000)
+
+			adjustCodePosition()
+			$("#code").typewriter()
+		}
+	</script>
+</body>
+</html>
